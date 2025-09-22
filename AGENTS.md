@@ -12,8 +12,6 @@ The entrypoint & all demo-relevant code lives in @src/main.ts
 It starts a service with a Linear webhook handler (& an Ngrok proxy to it).
 It is Typescript with Bun native HTTP support.
 
-After each task, you should run `bun fix` and then `bun check`. Keep going until you fixed all errors.
-
 # Demo sequence
 
 We start off with a very simple baseline app with the service and all the auth stuff defined.
