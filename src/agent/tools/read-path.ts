@@ -22,6 +22,12 @@ export const readPathTool = tool({
         accept: "application/vnd.github.raw+json",
       },
     });
+    if (typeof response.data === "string") {
+      return {
+        type: "file",
+        content: response.data,
+      };
+    }
 
     if ("type" in response.data) {
       switch (response.data.type) {

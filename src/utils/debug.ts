@@ -100,13 +100,14 @@ export function debugAgentSession(agentSessionId: string): Response {
           <div class="bg-green-50 rounded p-3">
             <div class="font-medium text-green-800 mb-1">✅ Tool Result</div>
             <div class="text-sm text-green-700 mb-2">ID: <code>${escapeHtml(part.toolCallId)}</code></div>
+            <div class="text-sm text-green-700 mb-2">Tool: <code>${escapeHtml(part.type.split("-")[1])}</code></div>
             <details class="text-sm">
               <summary class="cursor-pointer text-green-700 hover:text-green-800">Input</summary>
-              <pre class="mt-2 p-2 bg-white rounded border text-xs overflow-x-auto">${escapeHtml(JSON.stringify(part.input, null, 2))}</pre>
+              <pre class="mt-2 p-2 bg-white rounded border text-xs overflow-x-auto">${escapeHtml(JSON.stringify(part.input ?? {}, null, 2))}</pre>
             </details>
             <details class="text-sm">
               <summary class="cursor-pointer text-green-700 hover:text-green-800">Output</summary>
-              <pre class="mt-2 p-2 bg-white rounded border text-xs overflow-x-auto">${escapeHtml(JSON.stringify(part.output, null, 2))}</pre>
+              <pre class="mt-2 p-2 bg-white rounded border text-xs overflow-x-auto">${escapeHtml(JSON.stringify(part.output ?? part, null, 2))}</pre>
             </details>
           </div>
         `;
