@@ -2,7 +2,6 @@ import { getAgentMessages } from "../agent";
 
 export function debugAgentSession(agentSessionId: string): Response {
   const messages = getAgentMessages(agentSessionId);
-  console.dir(messages, { depth: null });
 
   function getRoleBadgeClass(role: string): string {
     switch (role) {

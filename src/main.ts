@@ -8,9 +8,6 @@ const webhookHandler = linear.webhooks.createHandler();
 
 webhookHandler.on("AgentSessionEvent", async (event) => {
   try {
-    // TODO: Let's handle some events
-    console.dir(event, { depth: null });
-
     const agentSessionId = event.agentSession.id;
 
     await linear.client.agentSessionUpdateExternalUrl(agentSessionId, {

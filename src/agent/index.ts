@@ -98,7 +98,6 @@ export async function promptAgent(
       if (controller.signal.aborted) {
         return;
       }
-      console.dir(step, { depth: null });
 
       await options?.onStep?.(step);
     },
@@ -119,7 +118,6 @@ export async function promptAgent(
     },
 
     onFinish({ messages }) {
-      console.dir({ messages }, { depth: null });
       if (controller.signal.aborted) {
         return;
       }
