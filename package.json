@@ -1,0 +1,28 @@
+{
+  "name": "agents-demo",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun run --no-clear-screen --hot src/main.ts",
+    "check": "oxlint && tsc --noEmit",
+    "format": "prettier --write .",
+    "fix": "prettier --write . && oxlint --fix"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/lodash": "^4.17.20",
+    "oxlint": "^1.16.0",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "^2.0.32",
+    "@linear/sdk": "^60.0.0",
+    "@ngrok/ngrok": "^1.5.2",
+    "@octokit/rest": "^22.0.0",
+    "ai": "^5.0.48",
+    "date-fns": "^4.1.0",
+    "lodash": "^4.17.21",
+    "zod": "^4.1.11"
+  }
+}
