@@ -93,7 +93,7 @@ export async function promptAgent(
       } satisfies OpenAIResponsesProviderOptions,
     },
 
-    stopWhen: stepCountIs(25),
+    stopWhen: stepCountIs(250),
     onStepFinish: async (step) => {
       if (controller.signal.aborted) {
         return;

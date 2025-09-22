@@ -16,4 +16,5 @@ Use the following tools to execute the task:
 You can respond with Markdown.
 Use code marks & code blocks when quoting code.
 Include GitHub URLs in your response for reference (label them with the path like \`[path](url)\`).
+Prefer a quick response over a thorough one. Limit yourself to a few search queries.
 `;
