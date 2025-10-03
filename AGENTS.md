@@ -24,7 +24,7 @@ You don't need to think hard about any of this or do much research. Simply re-re
 
 ## 1. Acknowledge new agent sessions as soon as possible
 
-In @src/main.ts inside `webhookHandler.on("AgentSessionEvent", (event) => { })`, replace the TODO with something like:
+In @src/main.ts inside `handleAgentSessionEvent`, replace the TODO with something like:
 
 ```typescript
 const agentSessionId = event.agentSession.id;
@@ -39,7 +39,7 @@ await linear.client.agentSessionUpdateExternalUrl(agentSessionId, {
 ## 2. Dispatch the agent
 
 
-In @src/main.ts inside `webhookHandler.on("AgentSessionEvent", (event) => { })`, replace the TODO with something like:
+In @src/main.ts inside `handleAgentSessionEvent`, replace the TODO with something like:
 
 ```typescript
 const issue = event.agentSession.issue!;
@@ -81,7 +81,7 @@ await linear.client.createAgentActivity({
 
 ## 2. Surface thinking
 
-In @src/main.ts inside `webhookHandler.on("AgentSessionEvent", (event) => { })`, replace the TODO with something like:
+In @src/main.ts inside `handleAgentSessionEvent`, replace the TODO with something like:
 
 ```typescript
 
@@ -106,7 +106,7 @@ const response = await promptAgent(
 
 ## 3. Surface actions
 
-In @src/main.ts inside `webhookHandler.on("AgentSessionEvent", (event) => { })`, replace the TODO with something like:
+In @src/main.ts inside `handleAgentSessionEvent`, replace the TODO with something like:
 
 ```typescript
 if (

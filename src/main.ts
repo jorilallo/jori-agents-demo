@@ -1,16 +1,18 @@
+import type { AgentSessionEventWebhookPayload } from "@linear/sdk/webhooks";
 import * as linear from "./services/linear";
 import { startNgrokTunnel } from "./services/ngrok";
 import { debugAgentSession } from "./utils/debug";
 
+async function handleAgentSessionEvent(event: AgentSessionEventWebhookPayload) {
+  // TODO: Handle the event
+}
+
 const webhookHandler = linear.webhooks.createHandler();
 
-webhookHandler.on("AgentSessionEvent", async (event) => {
-  try {
-    // TODO: Let's handle some events
-  } catch (ex) {
+webhookHandler.on("AgentSessionEvent", (event) => {
+  void handleAgentSessionEvent(event).catch((ex) => {
     console.error(ex);
-    throw ex;
-  }
+  });
 });
 
 const server = Bun.serve({
